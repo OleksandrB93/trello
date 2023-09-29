@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { createBoardDto } from "./dto";
 import { prisma } from "@/prisma/db";
 
-export async function GET(rea: Request) {
+export async function GET(req: Request) {
   const boards = await prisma.boards.findMany();
 
   return NextResponse.json(boards);
