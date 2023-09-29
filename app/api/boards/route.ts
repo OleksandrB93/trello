@@ -1,0 +1,30 @@
+import { NextResponse } from "next/server";
+import { createBoardDto } from "./dto";
+import { prisma } from "@/prisma/db";
+
+export async function GET(rea: Request) {
+  const boards = await prisma.boards.findMany();
+
+  return NextResponse.json(boards);
+}
+
+export async function POST(req: Request, res: Response) {
+  const bodyRaw = await req.json();
+  const validateBody = createBoardDto.safeParse(bodyRaw);
+
+  if (!validateBody.success) {
+    return NextResponse.json(validateBody.error.issues, {
+      status: 400,
+    });
+  }
+
+  const { title } = validateBody.data;
+
+  const newBoard = await prisma.boards.create({
+    data: {
+      title,
+    },
+  });
+
+  return NextResponse.json({ newBoard });
+}
