@@ -9,3 +9,10 @@ export const createColumnsDto = z.object({
 export const updateColumnsDto = createColumnsDto
   .omit({ boardId: true })
   .partial();
+
+export const updateColumnsOrderDto = z.array(
+  z.object({
+    id: z.string().uuid(),
+    order: z.number(),
+  })
+);

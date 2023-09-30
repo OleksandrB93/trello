@@ -61,5 +61,3 @@ export async function DELETE(req: Request, { params }: ColumnRouteContext) {
   return NextResponse.json({}, { status: 200 });
 }
 
-
-//! 1.41.24
