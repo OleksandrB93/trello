@@ -12,6 +12,7 @@
     "@prisma/client": "^5.3.1",
     "@tanstack/react-query": "^4.35.3",
     "@uidotdev/usehooks": "^2.3.1",
+    "axios": "^1.5.1",
     "clsx": "^2.0.0",
     "flowbite": "^1.8.1",
     "next": "latest",
