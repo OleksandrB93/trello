@@ -1,6 +1,6 @@
 "use client";
 
-import { BoardCard } from "@/components";
+import { BoardCard, CreateBoard } from "@/components";
 import { useBoards } from "@/hooks/use-boards";
 import { Boards } from "@prisma/client";
 
@@ -17,7 +17,7 @@ interface BoardsList {
         {boards.map((board) => (
           <BoardCard key={board.id} id={board.id} title={board.title} />
         ))}
-        {/* <CreateBoard /> */}
+        <CreateBoard />
       </div>
     );
   }

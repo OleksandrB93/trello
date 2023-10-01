@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.1",
     "@prisma/client": "^5.3.1",
     "@tanstack/react-query": "^4.35.3",
     "@uidotdev/usehooks": "^2.3.1",
@@ -18,6 +19,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-hook-form": "^7.46.2",
     "tailwind-merge": "^1.14.0",
     "zod": "^3.22.2"
   },
