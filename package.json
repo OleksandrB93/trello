@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@prisma/client": "^5.3.1",
+    "@uidotdev/usehooks": "^2.3.1",
+    "clsx": "^2.0.0",
     "flowbite": "^1.8.1",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "tailwind-merge": "^1.14.0",
     "zod": "^3.22.2"
   },
   "devDependencies": {
