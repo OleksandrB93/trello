@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { updateColumnsDto } from "../dto";
+import { updateColumnDto } from "../dto";
 import { prisma } from "@/prisma/db";
 
 interface ColumnRouteContext {
@@ -8,10 +8,34 @@ interface ColumnRouteContext {
   };
 }
 
-export async function PUT(req: Request, { params }: ColumnRouteContext) {
+export async function GET(req: Request, { params }: ColumnRouteContext) {
+  const { id } = params;
+
+  const column = await prisma.columns.findUnique({
+    where: {
+      id,
+    },
+    include: {
+      cards: true,
+    },
+  });
+
+  if (!column) {
+    return NextResponse.json([
+      {
+        code: "not_found",
+        messages: "Column not found",
+      },
+    ]);
+  }
+
+  return NextResponse.json(column);
+}
+
+export async function PATCH(req: Request, { params }: ColumnRouteContext) {
   const { id } = params;
   const bodyRaw = await req.json();
-  const validateBody = updateColumnsDto.safeParse(bodyRaw);
+  const validateBody = updateColumnDto.safeParse(bodyRaw);
 
   if (!validateBody.success) {
     return NextResponse.json(validateBody.error.issues, { status: 400 });
@@ -23,9 +47,12 @@ export async function PUT(req: Request, { params }: ColumnRouteContext) {
     },
   });
 
-  if (findColumn) {
+  if (!findColumn) {
     return NextResponse.json([
-      { code: "not_found", message: "Column not found" },
+      {
+        code: "not_found",
+        messages: "Column not found",
+      },
     ]);
   }
 
@@ -50,14 +77,18 @@ export async function DELETE(req: Request, { params }: ColumnRouteContext) {
 
   if (!findColumn) {
     return NextResponse.json([
-      { code: "not_found", message: "Column not found" },
+      {
+        code: "not_found",
+        messages: "Column not found",
+      },
     ]);
   }
 
   await prisma.columns.delete({
-    where: { id },
+    where: {
+      id,
+    },
   });
 
   return NextResponse.json({}, { status: 200 });
 }
-

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createColumnsDto } from "./dto";
+import { createColumnDto } from "./dto";
 import { prisma } from "@/prisma/db";
 
 export async function GET(req: Request) {
@@ -31,7 +31,7 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request, res: Response) {
   const bodyRaw = await req.json();
-  const validateBody = createColumnsDto.safeParse(bodyRaw);
+  const validateBody = createColumnDto.safeParse(bodyRaw);
 
   if (!validateBody.success) {
     return NextResponse.json(validateBody.error.issues, { status: 400 });

@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      height:{
+        content: 'calc(100% - 11rem)',
+      },
       backgroundImage: {},
     },
   },
