@@ -2,7 +2,7 @@ import { api } from "@/api";
 import { CreateBoardDto } from "@/app/api/boards/dto";
 import { Boards } from "@prisma/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useBoardsQueryKey } from "./use-boards";
+import { useBoardsQueryKey } from "./use-boards-query";
 
 const createBoardFn = async (board: CreateBoardDto) => {
   const { data } = await api.post<Boards>("/api/boards", board);

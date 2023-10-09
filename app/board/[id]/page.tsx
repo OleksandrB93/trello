@@ -1,4 +1,4 @@
-import { ColumnsList } from "@/components/columns-list";
+import { ColumnsList } from "@/components";
 import { prisma } from "@/prisma/db";
 import { notFound } from "next/navigation";
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { MIN_WIDTH } from "@/helper/constants";
 import { ColumnPayload, useColumnQuery } from "@/hooks/use-column-query";
 import { useUpdateColumnMutation } from "@/hooks/use-update-column-mutation";
 import { DragEvent, useEffect, useRef, useState } from "react";
@@ -7,8 +8,6 @@ import { DragEvent, useEffect, useRef, useState } from "react";
 interface ColumnProps {
   column: ColumnPayload;
 }
-
-const MIN_WIDTH = 200;
 
 export function Column({ column }: ColumnProps) {
   const { data } = useColumnQuery({ initialData: column });
@@ -51,7 +50,7 @@ export function Column({ column }: ColumnProps) {
           {data.title}
         </h5>
         <div
-          className="absolute -right-px top-[0.5rem] bottom-[0.5rem] cursor-move w-px bg-gray-700 select-none opacity-0"
+          className="absolute -right-px top-[0.5rem] bottom-[0.5rem] cursor-w-resize w-1 select-none opacity-0"
           draggable
           onDragStart={onResizeStart}
           onDrag={onResize}

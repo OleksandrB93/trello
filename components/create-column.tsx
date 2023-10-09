@@ -5,7 +5,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useCreateColumnMutation } from "@/hooks/use-create-column-mutation";
-import { Input } from "./input";
+import { Input } from "../components";
 
 const createColumnSchema = z.object({
   title: z.string().min(1).max(20),

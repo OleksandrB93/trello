@@ -2,9 +2,7 @@
 
 import { BoardPayload, useBoardQuery } from "@/hooks/use-board-query";
 import { useEffect } from "react";
-import { Column } from "./column";
-import { BoardTitle } from "./board-title";
-import { CreateColumn } from "./create-column";
+import { Column, BoardTitle, CreateColumn } from "../components";
 
 interface ColumnsListProps {
   board: BoardPayload;
