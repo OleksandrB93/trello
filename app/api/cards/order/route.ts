@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { updateCardsOrderDto } from "../dto";
-import { prisma } from "@/prisma/db";
+import { prisma } from "@/helper/db";
 
 export async function PATCH(req: Request) {
   const bodyRaw = await req.json();

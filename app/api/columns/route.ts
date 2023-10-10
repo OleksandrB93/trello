@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createColumnDto } from "./dto";
-import { prisma } from "@/prisma/db";
+import { prisma } from "@/helper/db";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);

@@ -1,5 +1,5 @@
 import { UpdateBoardDto } from "@/app/api/boards/dto";
-import { api } from "@/api";
+import { api } from "@/helper/api";
 import { Boards } from "@prisma/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 

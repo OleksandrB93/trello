@@ -1,5 +1,5 @@
 import { ColumnsList } from "@/components";
-import { prisma } from "@/prisma/db";
+import { prisma } from "@/helper/db";
 import { notFound } from "next/navigation";
 
 interface PageParams {
@@ -31,13 +31,11 @@ const BoardPage = async (props: PageProps) => {
     return notFound();
   }
 
-
   return (
     <>
       <ColumnsList board={board} />
     </>
   );
-}
+};
 
 export default BoardPage;
-

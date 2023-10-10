@@ -1,4 +1,4 @@
-import { api } from "@/api";
+import { api } from "@/helper/api";
 import { Prisma } from "@prisma/client";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";

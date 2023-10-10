@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { updateColumnsOrderDto } from "../dto";
-import { prisma } from "@/prisma/db";
+import { prisma } from "@/helper/db";
 
 export async function PUT(req: Request) {
   const bodyRaw = await req.json();

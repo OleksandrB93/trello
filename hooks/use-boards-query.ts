@@ -1,4 +1,4 @@
-import { api } from "@/api";
+import { api } from "@/helper/api";
 import { Boards } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
 

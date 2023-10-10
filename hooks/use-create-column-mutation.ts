@@ -1,4 +1,4 @@
-import { api } from "@/api";
+import { api } from "@/helper/api";
 import { Columns } from "@prisma/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { CreateColumnDto as CreateColumnDtoOriginal } from "@/app/api/columns/dto";

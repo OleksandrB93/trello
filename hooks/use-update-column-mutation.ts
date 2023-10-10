@@ -1,5 +1,5 @@
 import { UpdateColumnDto } from "@/app/api/columns/dto";
-import { api } from "@/api";
+import { api } from "@/helper/api";
 import { Columns } from "@prisma/client";
 import { useMutation } from "@tanstack/react-query";
 
