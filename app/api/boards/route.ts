@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createBoardDto } from "./dto";
-import { prisma } from "@/helper/db";
+import { prisma } from "@/core/db";
 
 export async function GET(req: Request) {
   const boards = await prisma.boards.findMany();

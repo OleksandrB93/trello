@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { updateCardDto } from "../dto";
-import { prisma } from "@/helper/db";
+import { prisma } from "@/core/db";
 
 interface CardRouteContext {
   params: {

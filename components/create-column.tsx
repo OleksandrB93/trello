@@ -42,7 +42,7 @@ export function CreateColumn({ boardId }: CreateColumnProps) {
 
   return (
     <div
-      className="block h-fit min-w-[12.5rem] w-[12.5rem] p-4 border rounded-lg shadow cursor-pointer bg-gray-800 border-gray-700 hover:bg-gray-700"
+      className="block sticky top-0 h-fit min-w-[10.5rem] w-[12.5rem] p-2 border rounded-lg shadow cursor-pointer bg-gray-800 border-gray-700 hover:bg-gray-700"
       onClick={openForm}
     >
       {isFormOpened ? (
@@ -55,8 +55,8 @@ export function CreateColumn({ boardId }: CreateColumnProps) {
           />
         </form>
       ) : (
-        <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
-          + Create a new column
+        <h5 className="flex gap-x-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+          <span>+</span> <span>Add a column</span>
         </h5>
       )}
     </div>

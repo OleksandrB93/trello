@@ -60,4 +60,3 @@ export function BoardTitle({ boardId }: BoardTitleProps) {
     </h1>
   );
 }
-//3.11.41

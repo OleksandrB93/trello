@@ -1,5 +1,5 @@
 import { ColumnsList } from "@/components";
-import { prisma } from "@/helper/db";
+import { prisma } from "@/core/db";
 import { notFound } from "next/navigation";
 
 interface PageParams {

@@ -1,4 +1,4 @@
-import { prisma } from "@/helper/db";
+import { prisma } from "@/core/db";
 import { BoardRouteContext } from "../route";
 import { NextResponse } from "next/server";
 
