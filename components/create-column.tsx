@@ -42,7 +42,7 @@ export function CreateColumn({ boardId }: CreateColumnProps) {
 
   return (
     <div
-      className="block sticky top-0 h-fit min-w-[10.5rem] w-[12.5rem] p-2 border rounded-lg shadow cursor-pointer bg-gray-800 border-gray-700 hover:bg-gray-700"
+      className="block sticky top-0 h-fit min-w-[10.5rem] w-[12.5rem] p-2 border rounded-lg shadow cursor-pointer bg-amber-600 border-amber-700 hover:bg-amber-500"
       onClick={openForm}
     >
       {isFormOpened ? (

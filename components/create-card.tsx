@@ -49,7 +49,7 @@ export function CreateCard({ columnId }: CreateCardProps) {
 
   return (
     <div
-      className="block p-1.5 text-base font-bold rounded-b-lg group cursor-pointer hover:shadow bg-amber-600 hover:bg-amber-500 text-white"
+      className="block p-1.5 text-base font-bold rounded-b-lg group cursor-pointer hover:shadow bg-amber-600 hover:bg-amber-500 transition duration-250 text-white"
       onClick={openForm}
     >
       {isFormOpened ? (

@@ -32,7 +32,7 @@ export function Button({
       type={type}
       disabled={isLoading}
       className={twMerge(
-        `text-white focus:ring-4 font-medium rounded-lg bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-blue-800 disabled:cursor-not-allowed ${buttonClasses}`
+        `text-white focus:ring-4 font-medium rounded-lg bg-amber-600 hover:bg-amber-600 focus:outline-none focus:ring-amber-500 transition duration-300 disabled:cursor-not-allowed ${buttonClasses}`
       )}
     >
       {isLoading ? (

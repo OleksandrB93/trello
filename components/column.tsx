@@ -51,21 +51,23 @@ export function Column({ column }: ColumnProps) {
   return (
     <div
       style={{ minWidth: width, width }}
-      className="block w-full h-fit border rounded-lg shadow bg-gray-800 border-t-0 border-gray-700 sticky top-0"
+      className="block w-full h-fit border rounded-lg bg-gray-800 border-t-0 border-gray-700 sticky top-0 hover:border-amber-700 transition-all duration-200"
     >
-      <div className="sticky top-0 bg-gray-800 border-t border-gray-700 rounded-t-lg">
+      <div className="sticky top-0 bg-gray-800 border-t border-amber-800 rounded-t-lg">
         <h5 className="text-lg font-bold tracking-tight text-white sticky p-3">
           {data.title}
         </h5>
-        <div
-          className="absolute z-20 mr-2 right-0 top-[0.5rem] bottom-[0.5rem] cursor-w-resize w-6 bg-gray-500/90 select-none opacity-0"
-          draggable
-          onDragStart={onResizeStart}
-          onDrag={onResize}
-          onDragEnd={onResizeEnd}
-        />
-        <div className="hidden md:flex absolute top-3.5 right-2">
-          <ChevronsRightLeft className="hover:bg-amber-500 bg-amber-600 text-white cursor-pointer rounded-md transition-all duration-250" />
+        <div className="group">
+          <div
+            className="absolute z-20 mr-2 right-0 top-[0.5rem] bottom-[0.5rem] cursor-w-resize w-5 bg-gray-500/90 select-none opacity-0 "
+            draggable
+            onDragStart={onResizeStart}
+            onDrag={onResize}
+            onDragEnd={onResizeEnd}
+          />
+          <div className="hidden md:flex absolute top-3.5 right-1">
+            <ChevronsRightLeft size={20} className="group-hover:bg-amber-600 bg-amber-800 text-white cursor-pointer rounded-[4px] transition-all duration-250" />
+          </div>
         </div>
       </div>
       <div>

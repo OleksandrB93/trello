@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { Input } from "../components";
+import { Button, Input } from "../components";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
@@ -36,17 +36,26 @@ export function CreateBoard() {
 
   return (
     <div
-      className="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow cursor-pointer hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      className="block w-full p-6 bg-white border border-amber-700 rounded-lg shadow cursor-pointer hover:bg-amber-500 dark:bg-amber-600 dark:border-amber-700 dark:hover:bg-amber-500 transition-all duration-250"
       onClick={openForm}
     >
       {isFormOpened ? (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="relative">
           <Input
             {...register("title")}
             placeholder="Enter your board title"
             error={errors.title?.message}
             disabled={isSubmitting}
+            // className="pr-20"
           />
+          <Button
+            size="xsmall"
+            className="absolute right-[5px] top-[5px]"
+            type="submit"
+            isLoading={isSubmitting}
+          >
+            Create
+          </Button>
         </form>
       ) : (
         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

@@ -1,4 +1,5 @@
 import { ColumnsList } from "@/components";
+import { CardDialog } from "@/components/card-dialog";
 import { BoardProvider } from "@/components/providers/bord.provider";
 import { prisma } from "@/core/db";
 import { notFound } from "next/navigation";
@@ -35,6 +36,7 @@ const BoardPage = async (props: PageProps) => {
   return (
     <BoardProvider>
       <ColumnsList board={board} />
+      <CardDialog />
     </BoardProvider>
   );
 };
