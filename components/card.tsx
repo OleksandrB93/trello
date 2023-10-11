@@ -1,16 +1,16 @@
-// import { boardContext } from "@/providers/board.provider";
 import { Cards } from "@prisma/client";
 import { useContext } from "react";
+import { boardContext } from "./providers/bord.provider";
 
 interface CardProps {
   card: Cards;
 }
 
 export function Card({ card }: CardProps) {
-  // const { selectCard } = useContext(boardContext);
+  const { selectCard } = useContext(boardContext);
 
   const handleClick = () => {
-    // selectCard(card.id);
+    selectCard(card.id);
   };
 
   return (

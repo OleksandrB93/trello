@@ -1,1 +1,1 @@
-export const MIN_WIDTH = 245;
+export const MIN_WIDTH = 200;

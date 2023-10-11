@@ -1,8 +1,8 @@
+import { CreateCardDto } from "@/app/api/cards/dto";
+import { api } from "@/core/api";
 import { Cards } from "@prisma/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ColumnPayload } from "./use-column-query";
-import { api } from "@/core/api";
-import { CreateCardDto } from "@/app/api/cards/dto";
 
 const createCardFn = async (card: CreateCardDto) => {
   const { data } = await api.post<Cards>("/api/cards", card);

@@ -5,6 +5,13 @@ import { ColumnPayload, useColumnQuery } from "@/hooks/use-column-query";
 import { useUpdateColumnMutation } from "@/hooks/use-update-column-mutation";
 import { DragEvent, useEffect, useRef, useState } from "react";
 import { Card, CreateCard } from "../components";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ChevronsRightLeft,
+  StepBack,
+} from "lucide-react";
+import { StepForward } from "lucide-react";
 
 interface ColumnProps {
   column: ColumnPayload;
@@ -51,15 +58,18 @@ export function Column({ column }: ColumnProps) {
           {data.title}
         </h5>
         <div
-          className="absolute -right-px top-[0.5rem] bottom-[0.5rem] cursor-col-resize w-1  bg-gray-700 select-none opacity-100"
+          className="absolute z-20 mr-2 right-0 top-[0.5rem] bottom-[0.5rem] cursor-w-resize w-6 bg-gray-500/90 select-none opacity-0"
           draggable
           onDragStart={onResizeStart}
           onDrag={onResize}
           onDragEnd={onResizeEnd}
         />
+        <div className="hidden md:flex absolute top-3.5 right-2">
+          <ChevronsRightLeft className="hover:bg-amber-500 bg-amber-600 text-white cursor-pointer rounded-md transition-all duration-250" />
+        </div>
       </div>
       <div>
-        <div className="flex gap-2 flex-col pl-3 pr-2 mb-1.5 mr-0.5 max-h-[65vh] overflow-y-auto">
+        <div className="flex gap-2 flex-col pl-3 pr-2 mb-1.5 mr-1 max-h-[65vh] overflow-y-auto">
           {data.cards.map((card) => (
             <Card key={card.id} card={card} />
           ))}
