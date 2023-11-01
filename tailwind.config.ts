@@ -14,6 +14,9 @@ const config: Config = {
         content: 'calc(100% - 11rem)',
       },
       backgroundImage: {},
+      spacing: {
+        26: "6.5rem",
+      }
     },
   },
   plugins: [require("flowbite/plugin")],

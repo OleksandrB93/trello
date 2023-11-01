@@ -14,3 +14,4 @@ export * from "./button";
 export * from "./dialog"
 export * from "./card-dialog"
 export * from "./mdx-editor";
+export * from "./loading";

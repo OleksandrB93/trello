@@ -20,7 +20,7 @@ export function ColumnsList({ board }: ColumnsListProps) {
       <div className="container mx-auto">
         <BoardTitle boardId={board.id} />
       </div>
-      <div className="flex flex-1 gap-6 overflow-x-scroll w-full h-content px-10 pb-5">
+      <div className="flex flex-1 gap-6  w-full h-content px-10 pb-5">
         {data.columns.map((column) => {
           return <Column key={`column-${column.id}`} column={column} />;
         })}
